@@ -1,0 +1,12 @@
+{
+  "name": "Carou Demo",
+  "description": "Demo",
+  "keywords": [
+    "go",
+    "demo"
+  ],
+  "image": "heroku/go:1.7",
+  "mount_dir": "src/github.com/heroku/Carou",
+  "website": "http://github.com/heroku/Carou",
+  "repository": "http://github.com/heroku/Carou"
+}

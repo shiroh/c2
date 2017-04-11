@@ -1,0 +1,33 @@
+<html>
+    <h2>Topics</h2>
+        <table with="100%" border="1px solid #ccc" id="topicTable">
+            {{ range . }}
+            <tr width="100%">
+                <td>{{ .Content }}</td>
+                <td>{{ .Votes }}</td>
+                <td>
+                    <form action="upvote" method="POST">
+                        <input type="hidden" name="body" value="1" />
+                        <input type="hidden" name="id" value={{ .ID }}>
+                        <input type="submit" value="upvote">
+                    </form>
+                </td>
+                <td>
+                    <form action="downvote" method="POST">
+                        <input type="hidden" name="body" value="-1" />
+                        <input type="hidden" name="id" value={{ .ID }}>
+                        <input type="submit" value="downvote">
+                    </form>
+                </td>
+            </tr>
+            {{ end }}
+        </table>
+        <br /><br />
+
+
+    <h3>Create Topic</h3>
+    <form action="create" method="POST">
+        <div><textarea name="body" rows="5" cols="100"></textarea></div>
+        <div><input type="submit" value="Create"></div>
+    </form>
+</html>
